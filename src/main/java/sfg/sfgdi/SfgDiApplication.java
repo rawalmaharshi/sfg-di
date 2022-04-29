@@ -3,6 +3,7 @@ package sfg.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import sfg.sfgdi.controllers.ConstructorInjectedController;
 import sfg.sfgdi.controllers.MyController;
 import sfg.sfgdi.controllers.PropertyInjectedController;
 import sfg.sfgdi.controllers.SetterInjectedController;
@@ -25,6 +26,10 @@ public class SfgDiApplication {
 		System.out.println("----Setter Injected-----");
 		SetterInjectedController setterInjectedController = (SetterInjectedController) ctx.getBean("setterInjectedController");
 		System.out.println(setterInjectedController.getGreeting());
+
+		System.out.println("----Constructor Injected-----");
+		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
+		System.out.println(constructorInjectedController.getGreeting());
 	}
 
 }
